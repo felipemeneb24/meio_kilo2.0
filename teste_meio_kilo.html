@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franquia Pizzaria Meio Kilo | Seja um Franqueado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #E31837;
+            --primary-dark: #C1122D;
+            --secondary: #FFC72C;
+            --dark: #1F1F1F;
+            --light: #FFFFFF;
+            --gray: #F5F5F5;
+            --dark-gray: #6B6B6B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), 
+                        url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 600px;
+            color: var(--light);
+            padding: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .header-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #f88934;
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e6b400;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color:black;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: black;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* About */
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Why Section */
+        .why-section {
+            background-color: var(--gray);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-card i {
+            font-size: 2.5rem;
+            color: #f88934;
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Numbers */
+        .numbers-section {
+            background-color: #f88934;
+            color: black;
+            text-align: center;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .number-item h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 0 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            background-color: var(--gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Form */
+        .form-section {
+            background-color: var(--light);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 40px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .numbers-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .number-item h3 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PIZZARIA <span>MEIO KILO</span></div>
+                <h1 class="tagline">Invista em uma franquia que já é sucesso!</h1>
+                <p class="header-text">A Pizzaria do Meio Kilo está expandindo e você pode fazer parte dessa receita de sucesso.</p>
+                <div class="cta-buttons">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfHMrInVnvrfcJSlYQKOXVLk2Vg8cmjFaqeOiKe_fstEQ9TQ/viewform" class="btn">Quero ser franqueado</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="about-section container">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1581&q=80" alt="Pizza Meio Kilo">
+        </div>
+        <div class="about-content">
+            <h2>Quem Somos</h2>
+            <p>Nascida durante a pandemia e já consolidada com duas unidades de sucesso, a Pizzaria Meio Kilo une receitas exclusivas, ingredientes de alta qualidade e um atendimento ágil.</p>
+            <p>Nosso modelo de negócios foi desenvolvido para oferecer o melhor custo-benefício do mercado, com operação eficiente e cardápio diversificado que inclui pizzas, esfihas e nosso carro-chefe: o famoso Pizza Trem.</p>
+            <p>O resultado? Clientes fiéis, crescimento constante e franqueados satisfeitos.</p>
+        </div>
+    </section>
+
+    <!-- Why Sector -->
+    <section id="diferenciais" class="why-section">
+        <div class="container">
+            <h2 class="section-title">Por que investir no setor de alimentação?</h2>
+            <p class="section-subtitle">Um mercado que não para de crescer e oferece oportunidades únicas para empreendedores</p>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Mercado Bilionário</h3>
+                    <p>O setor de food service movimenta bilhões por ano no Brasil, com crescimento constante mesmo em períodos de crise.</p>
+                </div>
+                
+                <div class="why-card">
+                    <i class="fas fa-motorcycle"></i>
+                    <h3>Demanda por Delivery</h3>
+                    <p>O mercado de delivery cresceu mais de 50% nos últimos anos e se tornou essencial no hábito de consumo dos brasileiros.</p>
+                </div>
+                
+                <div class="why-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Lucratividade</h3>
+                    <p>Margens atrativas e rotatividade constante garantem fluxo de caixa positivo e retorno rápido do investimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Franchise -->
+    <section class="container">
+        <h2 class="section-title">Por que a franquia Pizzaria Meio Kilo?</h2>
+        <p class="section-subtitle">Diferenciais que fazem nossa rede se destacar no mercado</p>
+        
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Marca em Ascensão</h3>
+                <p>Posicionamento forte no mercado regional com reconhecimento crescente e clientes fiéis.</p>
+            </div>
+            
+            <div class="why-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Modelo Comprovado</h3>
+                <p>Sistema operacional testado e otimizado para máxima eficiência e lucratividade.</p>
+            </div>
+            
+            <div class="why-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Cardápio Exclusivo</h3>
+                <p>Receitas patenteadas, mix de produtos diversificado e nosso carro-chefe: o Pizza Trem.</p>
+            </div>
+            
+            <div class="why-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustentabilidade</h3>
+                <p>Embalagens ecológicas e processos otimizados para reduzir desperdícios.</p>
+            </div>
+            
+            <div class="why-card">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte Completo</h3>
+                <p>Treinamento, marketing, gestão e tecnologia à disposição dos franqueados.</p>
+            </div>
+            
+            <div class="why-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Exclusividade Territorial</h3>
+                <p>Proteção de área para garantir o potencial de mercado de cada franqueado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers -->
+    <section class="numbers-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Números</h2>
+            <p class="section-subtitle">Dados que comprovam a viabilidade do negócio</p>
+            
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <h3>15-18%</h3>
+                    <p>Lucro Líquido Mensal</p>
+                </div>
+                
+                <div class="number-item">
+                    <h3>R$200K</h3>
+                    <p>Investimento Inicial</p>
+                </div>
+                
+                <div class="number-item">
+                    <h3>R$XXK</h3>
+                    <p>Faturamento Médio</p>
+                </div>
+                
+                <div class="number-item">
+                    <h3>XX</h3>
+                    <p>Meses para ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Quem já investiu recomenda</h2>
+            <p class="section-subtitle">Depoimentos de nossos franqueados</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Investir na Pizzaria Meio Kilo foi a melhor decisão que tomei. Em menos de um ano já estava com o negócio dando lucro e hoje tenho qualidade de vida e retorno financeiro excelente.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva">
+                        <div class="author-info">
+                            <h4>Carlos Silva</h4>
+                            <p>Franqueado em Belo Horizonte/MG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Nossas Especialidades</h2>
+            <p class="section-subtitle">Conheça alguns dos produtos que fazem nosso sucesso</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Calabresa">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Portuguesa">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571066811602-716837d681de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Pizza Frango com Catupiry">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80" alt="Pizza Trem">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">PIZZARIA MEIO KILO</div>
+                    <p class="footer-text">A franquia de pizzas que está conquistando o Brasil com qualidade, sabor e um modelo de negócios lucrativo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+      
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (18) 98110-3259</li>
+                        <li><i class="fas fa-envelope"></i> contato@pizzeriameiokilo.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Presidente Venceslau, SP</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pizzaria Meio Kilo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {  
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Simple animation on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.about-section, .why-card, .number-item, .testimonial-card, .gallery-item');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animated elements
+            document.querySelectorAll('.about-section, .why-card, .number-item, .testimonial-card, .gallery-item').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Trigger once on load
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
