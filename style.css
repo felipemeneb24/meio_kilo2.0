@@ -32,10 +32,10 @@
         /* Header */
         header {
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), 
-                        url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                        url('img/IMG_1442.jpg');
             background-size: cover;
-            background-position: center;
-            min-height: 90vh;
+            background-position: center 70%;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -127,14 +127,17 @@
         .about-section {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 50px;
+            margin: 80px auto;
         }
 
         .about-image {
             flex: 1;
-            border-radius: 15px;
+            min-width: 100px; /* Evita que fique muito pequena */
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            align-self: center; /* Garante alinhamento */
         }
 
         .about-image img {
